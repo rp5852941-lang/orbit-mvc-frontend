@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // CRA uses REACT_APP_API_URL; set it to /api to use the local proxy.
-const configuredBase = process.env.REACT_APP_API_URL || "http://localhost/orbit-api";
+const configuredBase = process.env.REACT_APP_API_URL || "https://orbit.gamer.gd/backend/api";
 const normalizedBase = configuredBase.replace(/\/+$/, "");
 const baseURL = normalizedBase.endsWith("/api") ? normalizedBase : `${normalizedBase}/api`;
 
