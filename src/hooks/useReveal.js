@@ -18,7 +18,7 @@ export default function useReveal(options = {}) {
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, []);
+  }, [options]);
 
   return [ref, inView];
 }
