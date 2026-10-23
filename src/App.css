@@ -1,0 +1,29 @@
+.App {
+  min-height: 100vh;
+}
+
+.btn-primary {
+  background: #17356b;
+  color: #fff;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+.btn-primary:hover {
+  background: #0d1f42;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -12px rgba(23,53,107,0.6);
+}
+
+.btn-orange {
+  background: #f26522;
+  color: #fff;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.btn-orange:hover { background: #d9531a; transform: translateY(-1px); }
+
+.btn-outline {
+  border: 1.5px solid #17356b;
+  color: #17356b;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+.btn-outline:hover { background: #17356b; color: #fff; }

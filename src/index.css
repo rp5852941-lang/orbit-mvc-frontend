@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1a2540;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+  :root {
+        --background: 0 0% 100%;
+        --foreground: 222 40% 18%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 40% 18%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 40% 18%;
+        --primary: 348 71% 36%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 348 71% 36%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f26522;
+}
+.eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: #f26522;
+    display: inline-block;
+}
+
+::selection { background: #f26522; color: #fff; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.reveal { opacity: 0; }
+.reveal.in-view { animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(28px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.card-hover {
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
+}
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px -20px rgba(26,37,64,0.28);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+html { scroll-behavior: smooth; }
+
+
+/* =====================================================================
+   LMS / Login / Apply pages (ported from DEMOS) — scoped so the public
+   Orbit website styling is not affected.
+   ===================================================================== */
+.lms-scope {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #F4F7FB;
+  color: #10233F;
+}
+.lms-scope h1, .lms-scope h2, .lms-scope h3, .lms-scope h4, .lms-scope h5, .lms-scope .font-head {
+  font-family: 'Manrope', system-ui, sans-serif;
+  letter-spacing: normal;
+}
+.lms-scope .text-ink { color: #10233F; }
+.lms-scope .rounded-sm { border-radius: 0.375rem; }
+.lms-scope .rounded-md { border-radius: 0.5rem; }
+.lms-scope .rounded-lg { border-radius: 0.75rem; }
+.lms-scope .rounded-xl { border-radius: 1rem; }
+.lms-scope .rounded-2xl { border-radius: 1.25rem; }
+.lms-scope *:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #F26A21;
+}
+.lms-scope ::-webkit-scrollbar { width: 10px; height: 10px; }
+.lms-scope ::-webkit-scrollbar-track { background: transparent; }
+.lms-scope ::-webkit-scrollbar-thumb { background: #cdd7e5; border-radius: 8px; }
+.lms-scope ::-webkit-scrollbar-thumb:hover { background: #b3c1d4; }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(220,68,85,.5); }
+  70% { box-shadow: 0 0 0 8px rgba(220,68,85,0); }
+  100% { box-shadow: 0 0 0 0 rgba(220,68,85,0); }
+}
+.live-pulse { animation: pulse-ring 1.6s infinite; }
+.orbit-scroll-thin::-webkit-scrollbar { width: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  .live-pulse { animation: none; }
+}
